@@ -3,15 +3,16 @@
 	"id": "stranded",
 	"version": "${version}",
 	"name": "Stranded",
-	"description": "Explore the world of another world!",
+	"description": "A Minecraft Adventure on Mars!\n\nYou've crash-landed on the red planet. Your space capsule is damaged, and time is running out. Manage your oxygen, find food, and explore the desolate Martian landscape filled with craters, rovers, and mysterious structures. Your mission: Repair your ship's antenna, send out a distress signal, and initiate your rescue. But beware – the surface of Mars holds many challenges. Can you survive and escape?\n\nTake on the ultimate survival adventure on Mars!",
 	"authors": [
 		"DotNomi"
 	],
 	"contact": {
 		"homepage": "https://dotnomi.de/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"issues": "https://github.com/dotnomi/Minecraft-Stranded/issues",
+		"sources": "https://github.com/dotnomi/Minecraft-Stranded"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/stranded/icon.png",
 	"environment": "*",
 	"entrypoints": {
