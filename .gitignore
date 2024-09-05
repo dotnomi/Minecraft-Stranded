@@ -1,3 +1,4 @@
+### Gradle
 .gradle
 **/build/
 !src/**/build/
@@ -14,6 +15,21 @@ gradle-app.setting
 # Cache of project
 .gradletasknamecache
 
+### IntelliJ IDEA
+# Ignore IntelliJ related stuff
+/.idea/*
+
+# Avoid ignore IntelliJ run configurations
+!.idea/runConfigurations/
+
+### Minecraft
+# Ignore minecraft stuff
+/run/*
+
+# Avoid ignore minecraft mods
+!/run/mods/
+
+### Eclipse
 # Eclipse Gradle plugin generated files
 # Eclipse Core
 .project
