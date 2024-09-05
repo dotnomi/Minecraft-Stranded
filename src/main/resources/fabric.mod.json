@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "stranded",
+	"version": "${version}",
+	"name": "Stranded",
+	"description": "Explore the world of another world!",
+	"authors": [
+		"DotNomi"
+	],
+	"contact": {
+		"homepage": "https://dotnomi.de/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/stranded/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.dotnomi.stranded.Stranded"
+		],
+		"fabric-datagen": [
+			"com.dotnomi.stranded.StrandedDataGenerator"
+		],
+		"client": [
+			"com.dotnomi.stranded.StrandedClient"
+		]
+	},
+	"mixins": [
+		"stranded.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.4",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
