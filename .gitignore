@@ -22,6 +22,9 @@ gradle-app.setting
 # Avoid ignore IntelliJ run configurations
 !.idea/runConfigurations/
 
+# Ignore generated sources
+/src/main/generated/*
+
 ### Minecraft
 # Ignore minecraft stuff
 /run/*
