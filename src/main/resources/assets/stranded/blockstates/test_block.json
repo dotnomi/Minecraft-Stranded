@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "stranded:block/test_block"
+    }
+  }
+}

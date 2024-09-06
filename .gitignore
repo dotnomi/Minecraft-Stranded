@@ -29,6 +29,9 @@ gradle-app.setting
 # Avoid ignore minecraft mods
 !/run/mods/
 
+# Avoid ignore minecraft feature test world
+!/run/saves/
+
 ### Eclipse
 # Eclipse Gradle plugin generated files
 # Eclipse Core
