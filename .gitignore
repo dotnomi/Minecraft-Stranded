@@ -35,6 +35,15 @@ gradle-app.setting
 # Avoid ignore minecraft feature test world
 !/run/saves/
 
+# Ignore minecraft world advancements
+/run/saves/**/advancements/
+
+# Ignore minecraft world stats
+/run/saves/**/stats/
+
+# Ignore minecraft world playerdata
+/run/saves/**/playerdata/
+
 ### Eclipse
 # Eclipse Gradle plugin generated files
 # Eclipse Core
