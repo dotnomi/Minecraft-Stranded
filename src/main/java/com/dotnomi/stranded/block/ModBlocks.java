@@ -12,6 +12,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
+@SuppressWarnings("CodeBlock2Expr")
 public class ModBlocks {
 
     public static final Block TEST_BLOCK =
@@ -20,7 +21,11 @@ public class ModBlocks {
             .requiresTool()
             .sounds(BlockSoundGroup.SAND)));
 
-
+    public static final Block RESEARCH_BLOCK =
+            registerBlock("research_block", new Block(AbstractBlock.Settings.create()
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.METAL)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -33,7 +38,7 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-        Stranded.LOGGER.info("Registering Mod Blocks");
+        Stranded.LOGGER.debug("Registering mod blocks");
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(TEST_BLOCK);

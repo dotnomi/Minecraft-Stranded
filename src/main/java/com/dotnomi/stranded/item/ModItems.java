@@ -8,6 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+@SuppressWarnings({"CodeBlock2Expr", "SameParameterValue"})
 public class ModItems {
     public static final Item TEST_ITEM = registerItem("test_item", new Item(new Item.Settings()));
 
@@ -16,7 +17,7 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        Stranded.LOGGER.info("Registering Mod Items");
+        Stranded.LOGGER.debug("Registering mod items");
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(TEST_ITEM);
