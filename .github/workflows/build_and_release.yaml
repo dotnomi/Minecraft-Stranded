@@ -19,6 +19,10 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: DEBUG
+        run: |
+          echo ${{ secrets.TOKEN }}
+
       - name: Build with Gradle
         run: ./gradlew build
 
