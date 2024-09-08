@@ -31,20 +31,20 @@ jobs:
       - name: Read changelog
         id: read_changelog
         run: |
-          echo "$(cat changelog.md)" > changelog_content.txt
+          CHANGELOG_CONTENT=$(cat changelog.md)
+          echo "CHANGELOG_CONTENT<<EOF" >> $GITHUB_ENV
+          echo "$CHANGELOG_CONTENT" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
-        run: |
-          echo $(cat changelog_content.txt)
         env:
           GITHUB_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         with:
           tag_name: ${{ env.VERSION }}
           release_name: Stranded - v${{ env.VERSION }}
-          body: |
-            $(cat changelog_content.txt)
+          body: ${{ env.CHANGELOG_CONTENT }}
           draft: false
           prerelease: false
 
