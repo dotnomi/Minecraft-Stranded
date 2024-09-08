@@ -31,9 +31,8 @@ jobs:
       - name: Read changelog
         id: read_changelog
         run: |
-          CHANGELOG_CONTENT=$(cat changelog.md)
+          CHANGELOG_CONTENT=$(cat changelog.md | base64)
           echo "CHANGELOG_CONTENT=$CHANGELOG_CONTENT" >> $GITHUB_ENV
-          echo "CHANGELOG_CONTENT=${CHANGELOG_CONTENT//\$/\\$}" >> $GITHUB_ENV
 
       - name: Create Release
         id: create_release
@@ -72,8 +71,9 @@ jobs:
 
       - name: Update Release Description
         run: |
+          DECODED_CHANGELOG=$(echo "${{ env.CHANGELOG_CONTENT }}" | base64 --decode)
           curl -X PATCH \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token ${{ secrets.TOKEN }}" \
-            -d '{"body":"'"${{ env.CHANGELOG_CONTENT }}"'"}' \
+            -d '{"body":"'"${DECODED_CHANGELOG}"'"}' \
             https://api.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.id }}
