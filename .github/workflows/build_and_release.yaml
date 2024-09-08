@@ -30,9 +30,7 @@ jobs:
 
       - name: Read changelog
         id: read_changelog
-        run: |
-          CHANGELOG_CONTENT=$(cat changelog.md | base64)
-          echo "CHANGELOG_CONTENT=$CHANGELOG_CONTENT" >> $GITHUB_ENV
+        run: echo "CHANGELOG_CONTENT=$(cat changelog.md)" >> $GITHUB_ENV
 
       - name: Create Release
         id: create_release
@@ -42,6 +40,7 @@ jobs:
         with:
           tag_name: ${{ env.VERSION }}
           release_name: Stranded - v${{ env.VERSION }}
+          body: ${{ env.CHANGELOG_CONTENT }}
           draft: false
           prerelease: false
 
@@ -54,12 +53,3 @@ jobs:
           asset_path: ./build/libs/stranded-${{ env.VERSION }}.jar
           asset_name: stranded-${{ env.VERSION }}.jar
           asset_content_type: application/java-archive
-
-      - name: Update Release Description
-        run: |
-          DECODED_CHANGELOG=$(echo "${{ env.CHANGELOG_CONTENT }}" | base64 --decode)
-          curl -X PATCH \
-            -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: token ${{ secrets.UPLOAD_TOKEN }}" \
-            -d '{"body":"'"${DECODED_CHANGELOG}"'"}' \
-            https://api.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.id }}
