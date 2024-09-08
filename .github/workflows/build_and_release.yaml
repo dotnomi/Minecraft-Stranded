@@ -1,0 +1,79 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.7
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4.2.2
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Extract version
+        id: extract_version
+        run: |
+          VERSION=$(grep '^mod_version=' gradle.properties | cut -d'=' -f2)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Read changelog
+        id: read_changelog
+        run: |
+          CHANGELOG_CONTENT=$(cat changelog.md)
+          echo "CHANGELOG_CONTENT=$CHANGELOG_CONTENT" >> $GITHUB_ENV
+          echo "CHANGELOG_CONTENT=${CHANGELOG_CONTENT//\$/\\$}" >> $GITHUB_ENV
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          tag_name: ${{ env.VERSION }}
+          release_name: Stranded - v${{ env.VERSION }}
+          draft: false
+          prerelease: false
+
+      - name: Upload JAR file
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/libs/stranded-${{ env.VERSION }}.jar
+          asset_name: stranded-${{ env.VERSION }}.jar
+          asset_content_type: application/java-archive
+
+      - name: Upload Source ZIP
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/distributions/source-code-${{ env.VERSION }}.zip
+          asset_name: source-code-${{ env.VERSION }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload Source TAR
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/distributions/source-code-${{ env.VERSION }}.tar
+          asset_name: source-code-${{ env.VERSION }}.tar
+          asset_content_type: application/x-tar
+
+      - name: Update Release Description
+        run: |
+          curl -X PATCH \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.TOKEN }}" \
+            -d '{"body":"'"${{ env.CHANGELOG_CONTENT }}"'"}' \
+            https://api.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.id }}
