@@ -19,10 +19,6 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: DEBUG
-        run: |
-          echo ${{ secrets.UPLOAD_TOKEN }}
-
       - name: Build with Gradle
         run: ./gradlew build
 
@@ -42,7 +38,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ env.VERSION }}
           release_name: Stranded - v${{ env.VERSION }}
@@ -57,27 +53,11 @@ jobs:
           asset_name: stranded-${{ env.VERSION }}.jar
           asset_content_type: application/java-archive
 
-      - name: Upload Source ZIP
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/distributions/source-code-${{ env.VERSION }}.zip
-          asset_name: source-code-${{ env.VERSION }}.zip
-          asset_content_type: application/zip
-
-      - name: Upload Source TAR
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/distributions/source-code-${{ env.VERSION }}.tar
-          asset_name: source-code-${{ env.VERSION }}.tar
-          asset_content_type: application/x-tar
-
       - name: Update Release Description
         run: |
           DECODED_CHANGELOG=$(echo "${{ env.CHANGELOG_CONTENT }}" | base64 --decode)
           curl -X PATCH \
             -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: token ${{ secrets.UPLOAD_TOKEN }}" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -d '{"body":"'"${DECODED_CHANGELOG}"'"}' \
             https://api.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.id }}
