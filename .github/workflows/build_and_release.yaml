@@ -36,6 +36,17 @@ jobs:
           echo "$CHANGELOG_CONTENT" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
+      - name: Check if Release Exists
+        id: check_release
+        run: |
+          RELEASE_EXISTS=$(gh release view ${{ env.VERSION }} --json tagName --jq .tagName)
+          if [ "$RELEASE_EXISTS" == "${{ env.VERSION }}" ]; then
+            echo "Release already exists. Deleting..."
+            gh release delete ${{ env.VERSION }} --confirm
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
