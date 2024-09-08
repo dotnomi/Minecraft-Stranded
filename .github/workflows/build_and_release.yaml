@@ -42,7 +42,7 @@ jobs:
           RELEASE_EXISTS=$(gh release view ${{ env.VERSION }} --json tagName --jq .tagName)
           if [ "$RELEASE_EXISTS" == "${{ env.VERSION }}" ]; then
             echo "Release already exists. Deleting..."
-            gh release delete ${{ env.VERSION }} --confirm
+            gh release delete ${{ env.VERSION }} --cleanup-tag --yes
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
