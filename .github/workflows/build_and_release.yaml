@@ -36,6 +36,8 @@ jobs:
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
+        run: |
+          echo $(cat changelog_content.txt)
         env:
           GITHUB_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         with:
