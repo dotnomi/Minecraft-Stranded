@@ -1,0 +1,29 @@
+{
+  "debugMode": false,
+  "missions": [
+    {
+      "id": 0,
+      "name": "stranded.mission.name.stage_1",
+      "description": "stranded.mission.description.stage_1",
+      "modules": [
+        {
+          "id": 0,
+          "name": "stranded.module.name.stage_1",
+          "description": "stranded.module.description.stage_1",
+          "neededResources": [
+            {
+              "id": 0,
+              "item": "minecraft:stone",
+              "amount": "128"
+            },
+            {
+              "id": 1,
+              "item": "minecraft:dirt",
+              "amount": "256"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
