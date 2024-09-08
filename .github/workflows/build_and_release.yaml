@@ -42,6 +42,19 @@ jobs:
         with:
           tag_name: ${{ env.VERSION }}
           release_name: Stranded - v${{ env.VERSION }}
+          body: |
+            ## Changes in this Release
+
+            ### Added
+            - Feature A
+            - Feature B
+
+            ### Fixed
+            - Bug X
+            - Bug Y
+
+            ### Notes
+            - Additional information or instructions.
           draft: false
           prerelease: false
 
