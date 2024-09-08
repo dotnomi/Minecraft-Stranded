@@ -42,12 +42,13 @@ jobs:
         with:
           tag_name: ${{ env.VERSION }}
           release_name: Stranded - v${{ env.VERSION }}
-          body: $(echo "${{ env.CHANGELOG_CONTENT }}" | base64 --decode)
           draft: false
           prerelease: false
 
       - name: Upload JAR file
         uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/libs/stranded-${{ env.VERSION }}.jar
