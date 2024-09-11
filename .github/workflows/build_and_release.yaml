@@ -52,10 +52,13 @@ jobs:
       - name: Check if Release Exists
         id: check_release
         run: |
-          RELEASE_EXISTS=$(gh release view ${{ env.VERSION }} --json tagName --jq .tagName)
+          RELEASE_EXISTS=$(curl -s -H "Authorization: token ${{ secrets.UPLOAD_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ env.VERSION }} | jq -r '.tag_name // empty')
           if [ "$RELEASE_EXISTS" == "${{ env.VERSION }}" ]; then
             echo "Release already exists. Deleting..."
-            gh release delete ${{ env.VERSION }} --cleanup-tag --yes
+            curl -s -X DELETE -H "Authorization: token ${{ secrets.UPLOAD_TOKEN }}" \
+              https://api.github.com/repos/${{ github.repository }}/releases/$(curl -s -H "Authorization: token ${{ secrets.UPLOAD_TOKEN }}" \
+              https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ env.VERSION }} | jq -r '.id')
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
