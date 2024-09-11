@@ -31,9 +31,22 @@ jobs:
       - name: Read changelog
         id: read_changelog
         run: |
-          CHANGELOG_CONTENT=$(cat changelog.md)
+          CHANGELOG_CONTENT=$(cat changelogs/${{ env.VERSION }}.md)
+          
+          # Append version-specific message
+          if [[ "${{ env.VERSION }}" == *"a" ]]; then
+            WARNING="IMPORTANT: This is an alpha build. There might be bugs."
+          elif [[ "${{ env.VERSION }}" == *"b" ]]; then
+            WARNING="IMPORTANT: This is a beta build. There might be bugs."
+          elif [[ "${{ env.VERSION }}" == *"r" ]]; then
+            WARNING=""
+          else
+            WARNING=""
+          fi
+          
           echo "CHANGELOG_CONTENT<<EOF" >> $GITHUB_ENV
           echo "$CHANGELOG_CONTENT" >> $GITHUB_ENV
+          echo -e "\n$WARNING" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
       - name: Check if Release Exists
