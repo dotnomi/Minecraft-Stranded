@@ -1,11 +1,12 @@
 {
-	"required": true,
-	"package": "com.dotnomi.stranded.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "com.dotnomi.stranded.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ExampleMixin",
+    "ModEntityDataSaverMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }
