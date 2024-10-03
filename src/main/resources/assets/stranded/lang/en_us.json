@@ -1,4 +1,9 @@
 {
   "item.stranded.test_item": "Test Item",
-  "block.stranded.test_block": "Test Block"
+  "block.stranded.test_block": "Test Block",
+  "key.category.stranded": "Stranded",
+  "key.stranded.debug": "Debug Key",
+  "message.stranded.debug_key_pressed": "Pressed [Debug Key]",
+  "message.stranded.client_received": "[Client] Received a message",
+  "message.stranded.server_received": "[Server] Received a message"
 }

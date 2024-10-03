@@ -18,6 +18,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
             .add(ModBlocks.TEST_BLOCK);
 
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+            .add(ModBlocks.RESEARCH_BLOCK);
+
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
             .add(ModBlocks.TEST_BLOCK);
     }
