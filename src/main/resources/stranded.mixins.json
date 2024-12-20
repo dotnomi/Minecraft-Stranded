@@ -4,9 +4,15 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "ExampleMixin",
-    "ModEntityDataSaverMixin"
+    "ModEntityDataSaverMixin",
+    "SoundCategoryMixin",
+    "WorldPresetMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  },
+  "client": [
+    "GameMenuScreenMixin",
+    "InGameHudMixin"
+  ]
 }

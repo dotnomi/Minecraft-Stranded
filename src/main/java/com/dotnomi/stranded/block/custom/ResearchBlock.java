@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("unused")
 public class ResearchBlock extends BlockWithEntity implements BlockEntityProvider {
-    private static final VoxelShape SHAPE = Block.createCuboidShape(0,0,0,16,8,16);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(0,0,0,16,32,16);
 
     public ResearchBlock(Settings settings) {
         super(settings);

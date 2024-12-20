@@ -1,0 +1,26 @@
+{
+  "voiceover_landing_intro_0": {
+    "subtitle": "sounds.stranded.voiceover_landing_intro",
+    "sounds": [
+      "stranded:voiceover_landing_intro_0"
+    ]
+  },
+  "voiceover_landing_intro_1": {
+    "subtitle": "sounds.stranded.voiceover_landing_intro",
+    "sounds": [
+      "stranded:voiceover_landing_intro_1"
+    ]
+  },
+  "voiceover_landing_intro_2": {
+    "subtitle": "sounds.stranded.voiceover_landing_intro",
+    "sounds": [
+      "stranded:voiceover_landing_intro_2"
+    ]
+  },
+  "voiceover_landing_intro_3": {
+    "subtitle": "sounds.stranded.voiceover_landing_intro",
+    "sounds": [
+      "stranded:voiceover_landing_intro_3"
+    ]
+  }
+}

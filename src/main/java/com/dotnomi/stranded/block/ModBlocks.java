@@ -12,7 +12,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
-@SuppressWarnings("CodeBlock2Expr")
 public class ModBlocks {
 
     public static final Block TEST_BLOCK =
@@ -42,6 +41,7 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(TEST_BLOCK);
+            entries.add(RESEARCH_BLOCK);
         });
     }
 }

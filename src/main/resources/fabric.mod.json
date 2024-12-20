@@ -15,6 +15,7 @@
 	"license": "MIT",
 	"icon": "assets/stranded/icon.png",
 	"environment": "*",
+	"accessWidener": "stranded.accesswidener",
 	"entrypoints": {
 		"main": [
 			"com.dotnomi.stranded.Stranded"
