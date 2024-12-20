@@ -13,6 +13,8 @@ base {
 }
 
 repositories {
+	mavenCentral()
+	maven { url = "https://maven.kyrptonaught.dev" }
 }
 
 distributions {
@@ -28,7 +30,13 @@ fabricApi {
 	configureDataGeneration()
 }
 
+loom {
+	accessWidenerPath = file("src/main/resources/stranded.accesswidener")
+}
+
 dependencies {
+	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta66-1.21'
+
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"

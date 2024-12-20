@@ -3,6 +3,7 @@ package com.dotnomi.stranded.networking;
 import com.dotnomi.stranded.Stranded;
 import com.dotnomi.stranded.networking.packet.ExampleC2SPacket;
 import com.dotnomi.stranded.networking.packet.ExampleS2CPacket;
+import com.dotnomi.stranded.networking.packet.PlayVoiceoverS2CPacket;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
@@ -13,6 +14,8 @@ public class ModPayloads {
     public static void initialize() {
         Stranded.LOGGER.debug("Initializing ModPayloads");
         registerS2C(ExampleS2CPacket.IDENTIFIER, ExampleS2CPacket.CODEC);
+        registerS2C(PlayVoiceoverS2CPacket.IDENTIFIER, PlayVoiceoverS2CPacket.CODEC);
+
         registerC2S(ExampleC2SPacket.IDENTIFIER, ExampleC2SPacket.CODEC);
     }
 

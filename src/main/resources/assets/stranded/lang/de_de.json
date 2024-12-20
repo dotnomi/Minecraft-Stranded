@@ -1,4 +1,13 @@
 {
   "item.stranded.test_item": "Test Item [DE]",
-  "block.stranded.test_block": "Test Block [DE]"
+  "block.stranded.test_block": "Test Block [DE]",
+
+  "soundCategory.voiceover": "Stranded Sprachausgabe",
+
+  "generator.stranded.mars": "Gestrandet auf dem Mars",
+
+  "hud.stranded.skip_voiceover": "Überspringen ({key})",
+
+  "voiceover.stranded.landing_intro": "Willkommen zurück, Pionier. Ich muss sagen, dein Überleben ist... unerwartet.\u0001Aber hey, wir wollen uns nicht mit Wundern aufhalten. Wie du vielleicht bemerkt hast, hat unser Schiff eine Bruchlandung auf dem Mars hingelegt.\u0001Bevor du auf dumme Gedanken kommst: Das war definitiv nicht meine Schuld.\u0001Ich schiebe sogar die ganze Verantwortung auf dich - schließlich bist du derjenige, der hier überleben soll."
+
 }

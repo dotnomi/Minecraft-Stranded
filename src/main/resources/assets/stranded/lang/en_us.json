@@ -5,5 +5,13 @@
   "key.stranded.debug": "Debug Key",
   "message.stranded.debug_key_pressed": "Pressed [Debug Key]",
   "message.stranded.client_received": "[Client] Received a message",
-  "message.stranded.server_received": "[Server] Received a message"
+  "message.stranded.server_received": "[Server] Received a message",
+
+  "soundCategory.voiceover": "Stranded Voiceover",
+  "generator.stranded.mars": "Stranded on Mars",
+
+  "hud.stranded.skip_voiceover": "Skip ({key})",
+
+  "voiceover.stranded.landing_intro": "Welcome back, Pioneer. I must say, your survival is... unexpected.\u0001But hey, let's not dwell on miracles. As you may have noticed, our ship has crash-landed on Mars.\u0001Before you get any ideas, this is definitely not my fault.\u0001In fact, I’m assigning all responsibility to you – after all, you're the one who’s supposed to be surviving here."
+
 }

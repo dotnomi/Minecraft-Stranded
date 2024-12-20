@@ -1,0 +1,127 @@
+[05:02:04] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.1 with Fabric Loader 0.16.4
+[05:02:04] [main/INFO] (FabricLoader) Loading 55 mods:
+	- fabric-api 0.103.0+1.21.1
+	- fabric-api-base 0.4.42+6573ed8c19
+	- fabric-api-lookup-api-v1 1.6.68+b559734419
+	- fabric-biome-api-v1 13.0.29+5bd9f1bc19
+	- fabric-block-api-v1 1.0.22+0af3f5a719
+	- fabric-block-view-api-v2 1.0.10+6573ed8c19
+	- fabric-blockrenderlayer-v1 1.1.52+0af3f5a719
+	- fabric-client-tags-api-v1 1.1.15+6573ed8c19
+	- fabric-command-api-v1 1.2.49+f71b366f19
+	- fabric-command-api-v2 2.2.28+6ced4dd919
+	- fabric-commands-v0 0.2.66+df3654b319
+	- fabric-content-registries-v0 8.0.16+b559734419
+	- fabric-convention-tags-v1 2.0.21+7f945d5b19
+	- fabric-convention-tags-v2 2.6.1+9b16164119
+	- fabric-crash-report-info-v1 0.2.29+0af3f5a719
+	- fabric-data-attachment-api-v1 1.1.28+1daea21519
+	- fabric-data-generation-api-v1 20.2.18+16c4ae2519
+	- fabric-dimensions-v1 4.0.0+6fc22b9919
+	- fabric-entity-events-v1 1.7.0+2122d82819
+	- fabric-events-interaction-v0 0.7.12+ba9dae0619
+	- fabric-game-rule-api-v1 1.0.53+6ced4dd919
+	- fabric-gametest-api-v1 2.0.4+6fc22b9919
+	- fabric-item-api-v1 11.0.0+afdfc92119
+	- fabric-item-group-api-v1 4.1.5+3fc0e55219
+	- fabric-key-binding-api-v1 1.0.47+0af3f5a719
+	- fabric-keybindings-v0 0.2.45+df3654b319
+	- fabric-lifecycle-events-v1 2.3.12+6c1df36019
+	- fabric-loot-api-v2 3.0.14+3f89f5a519
+	- fabric-loot-api-v3 1.0.2+3f89f5a519
+	- fabric-message-api-v1 6.0.13+6573ed8c19
+	- fabric-model-loading-api-v1 2.0.0+fe474d6b19
+	- fabric-networking-api-v1 4.2.2+60c3209b19
+	- fabric-object-builder-api-v1 15.2.0+40875a9319
+	- fabric-particles-v1 4.0.2+6573ed8c19
+	- fabric-recipe-api-v1 5.0.12+6508971219
+	- fabric-registry-sync-v0 5.1.2+60c3209b19
+	- fabric-renderer-api-v1 3.4.0+c705a49c19
+	- fabric-renderer-indigo 1.7.0+c705a49c19
+	- fabric-renderer-registries-v1 3.2.68+df3654b319
+	- fabric-rendering-data-attachment-v1 0.3.48+73761d2e19
+	- fabric-rendering-fluids-v1 3.1.6+1daea21519
+	- fabric-rendering-v0 1.1.71+df3654b319
+	- fabric-rendering-v1 5.0.5+df16efd019
+	- fabric-resource-conditions-api-v1 4.3.0+8dc279b119
+	- fabric-resource-loader-v0 1.3.0+5659912919
+	- fabric-screen-api-v1 2.0.25+8b68f1c719
+	- fabric-screen-handler-api-v1 1.3.86+b559734419
+	- fabric-sound-api-v1 1.0.23+6573ed8c19
+	- fabric-transfer-api-v1 5.1.17+1db1cc1f19
+	- fabric-transitive-access-wideners-v1 6.1.0+1daea21519
+	- fabricloader 0.16.4
+	- java 21
+	- minecraft 1.21.1
+	- mixinextras 0.4.1
+	- stranded 0.0.1
+[05:02:04] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/dotnomi/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.3+mixin.0.8.7/51ee0a44ab05f6fddd66b09e66b3a16904f9c55d/sponge-mixin-0.15.3+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[05:02:04] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[05:02:04] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[05:02:04] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
+[05:02:05] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[05:02:06] [Datafixer Bootstrap/INFO] (Minecraft) 226 Datafixer optimizations took 273 milliseconds
+[05:02:09] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[05:02:09] [Render thread/INFO] (Minecraft) Setting user: Player139
+[05:02:09] [Render thread/INFO] (Stranded) Registering mod sounds
+[05:02:09] [Render thread/INFO] (Stranded) minecraft:stone
+[05:02:09] [Render thread/INFO] (Stranded) minecraft:dirt
+[05:02:09] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[05:02:10] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
+[05:02:11] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-blockrenderlayer-v1, fabric-client-tags-api-v1, fabric-command-api-v1, fabric-command-api-v2, fabric-commands-v0, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-keybindings-v0, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-renderer-registries-v1, fabric-rendering-data-attachment-v1, fabric-rendering-fluids-v1, fabric-rendering-v0, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-sound-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, stranded
+[05:02:11] [Worker-Main-7/INFO] (Minecraft) Found unifont_all_no_pua-15.1.05.hex, loading
+[05:02:11] [Worker-Main-8/INFO] (Minecraft) Found unifont_jp_patch-15.1.05.hex, loading
+[05:02:11] [Worker-Main-3/WARN] (Minecraft) Exception loading blockstate definition: 'stranded:blockstates/research_block.json' missing model for variant: 'stranded:research_block#'
+[05:02:11] [Worker-Main-3/WARN] (Minecraft) Unable to load model: 'stranded:item/research_block' referenced from: stranded:item/research_block: java.io.FileNotFoundException: stranded:models/item/research_block.json
+[05:02:12] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[05:02:12] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[05:02:12] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Wave Link Game (Elgato Wave:1)
+[05:02:12] [Render thread/INFO] (Minecraft) Sound engine started
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[05:02:12] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[05:02:12] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[05:03:15] [Render thread/INFO] (Minecraft) Connecting to localhost, 25565
+[05:03:17] [Render thread/INFO] (Minecraft) Loaded 2 advancements
+[05:03:21] [Render thread/INFO] (Minecraft) [System] [CHAT] Player177 joined the game
+[05:04:24] [Render thread/INFO] (Minecraft) [System] [CHAT] Player177 was shot by Pillager
+[05:05:39] [Render thread/INFO] (Minecraft) Connecting to localhost, 25565
+[05:05:40] [Render thread/INFO] (Minecraft) Loaded 2 advancements
+[05:05:46] [Render thread/INFO] (Minecraft) [System] [CHAT] Player177 joined the game
+[05:06:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Pressed [Debug Key]
+[05:06:07] [Render thread/INFO] (Stranded) [Server] Received a message
+[05:06:10] [Render thread/INFO] (Minecraft) [System] [CHAT] Pressed [Debug Key]
+[05:06:10] [Render thread/INFO] (Stranded) [Server] Received a message
+[05:06:11] [Render thread/INFO] (Minecraft) [System] [CHAT] Pressed [Debug Key]
+[05:06:11] [Render thread/INFO] (Stranded) [Server] Received a message
+[05:06:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Pressed [Debug Key]
+[05:06:12] [Render thread/INFO] (Stranded) [Server] Received a message
+[05:06:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Pressed [Debug Key]
+[05:06:12] [Render thread/INFO] (Stranded) [Server] Received a message
+[05:06:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Pressed [Debug Key]
+[05:06:12] [Render thread/INFO] (Stranded) [Server] Received a message
+[05:06:16] [Render thread/INFO] (Minecraft) [System] [CHAT] Pressed [Debug Key]
+[05:06:16] [Render thread/INFO] (Stranded) [Server] Received a message
+[05:06:20] [Render thread/INFO] (Minecraft) Connecting to localhost, 25565
+[05:06:22] [Render thread/INFO] (Minecraft) Loaded 2 advancements
+[05:06:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Pressed [Debug Key]
+[05:06:23] [Render thread/INFO] (Stranded) [Server] Received a message
+[05:06:29] [Render thread/INFO] (Minecraft) [System] [CHAT] Pressed [Debug Key]
+[05:06:29] [Render thread/INFO] (Stranded) [Server] Received a message
+[05:06:33] [Render thread/INFO] (Minecraft) [System] [CHAT] Player177 left the game
+[05:06:37] [Render thread/INFO] (Minecraft) [System] [CHAT] Player177 joined the game
+[05:07:32] [Render thread/INFO] (Minecraft) [System] [CHAT] Pressed [Debug Key]
+[05:07:32] [Render thread/INFO] (Stranded) [Server] Received a message
+[05:08:55] [Render thread/INFO] (Minecraft) [System] [CHAT] Player177 left the game
+[05:08:56] [Render thread/INFO] (Minecraft) Stopping!

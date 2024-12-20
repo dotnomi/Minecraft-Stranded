@@ -1,16 +1,23 @@
 package com.dotnomi.stranded.data;
 
-import com.dotnomi.stranded.Stranded;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
+import net.minecraft.nbt.NbtList;
+import net.minecraft.nbt.NbtString;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.world.PersistentState;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StrandedWorldState extends PersistentState {
-    private int dummyData;
+    private static List<String> unlockedVoiceovers = new ArrayList<>();
 
     @Override
     public NbtCompound writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        nbt.putInt(Stranded.MOD_ID + "dummy_data", dummyData);
+        NbtList nbtUnlockedVoiceovers = new NbtList();
+        unlockedVoiceovers.forEach(voiceover -> nbtUnlockedVoiceovers.add(NbtString.of(voiceover)));
+        nbt.put("unlocked_voiceovers", nbtUnlockedVoiceovers);
         return nbt;
     }
 
@@ -22,26 +29,29 @@ public class StrandedWorldState extends PersistentState {
 
     public static StrandedWorldState fromNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         StrandedWorldState state = new StrandedWorldState();
-        state.dummyData = nbt.getInt(Stranded.MOD_ID + "dummy_data");
+
+        unlockedVoiceovers = new ArrayList<>();
+        NbtList nbtUnlockedVoiceovers = nbt.getList("unlocked_voiceovers", NbtElement.STRING_TYPE);
+        nbtUnlockedVoiceovers.forEach(nbtVoiceover -> unlockedVoiceovers.add((nbtVoiceover).asString()));
+
         return state;
     }
 
-    public void addDummyData(int amount) {
-        dummyData += amount;
+    public void addUnlockedVoiceover(String voiceoverId) {
+        unlockedVoiceovers.add(voiceoverId);
         markDirty();
     }
 
-    public void removeDummyData(int amount) {
-        dummyData -= amount;
+    public void removeDummyData(String voiceoverId) {
+        unlockedVoiceovers.remove(voiceoverId);
         markDirty();
     }
 
-    public void setDummyData(int dummyData) {
-        this.dummyData = dummyData;
-        markDirty();
+    public List<String> getUnlockedVoiceovers() {
+        return unlockedVoiceovers;
     }
 
-    public int getDummyData() {
-        return dummyData;
+    public boolean isVoiceoverUnlocked(String voiceoverId) {
+        return unlockedVoiceovers.contains(voiceoverId);
     }
 }
